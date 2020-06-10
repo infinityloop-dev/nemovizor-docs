@@ -39,40 +39,63 @@ type Locality {
 }
 
 
-
+```
+Bližší informace o nabídce v závislosti na klíčových atributech nabídky
+```
 type AdditionalInfo {
   serviceTypeInfo: ServiceTypeInfo!
   estateTypeInfo: EstateTypeInfo!
 }
 
 ```
-Bližší popis nabídky podle typu služby
+Bližší informace o nabídce podle typu služby
 ```
 union ServiceTypeInfo = TransferInfo | RentInfo
 
+```
+Informace o prodeji
+```
 type TransferInfo {
 }
 
+```
+Informace o pronájmu
+```
 type RentInfo {
 }
 
 ```
-Bližší popis nabídky podle typu nemovitosti
+Bližší informace o nabídce podle typu nemovitosti
 ```
 union EstateTypeInfo = ApartmentInfo | HouseInfo | LandInfo | CommercialInfo | GarageInfo
 
+```
+Informace o bytu
+```
 type ApartmentInfo {
 }
 
+```
+Informace o domě
+```
 type HouseInfo {
 }
 
+```
+Informace o pozemku
+```
 type LandInfo {
 }
 
+```
+Informace o komerčním prostoru
+```
 type CommercialInfo {
 }
 
+```
+Informace o garáži & ostatních nemovitostech
+```
 type GarageInfo {
 }
 
