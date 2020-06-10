@@ -17,6 +17,16 @@ union SearchResult = Offer | Auction | Project | Broker | Locality
 
 union Listing = Offer | Auction | Project
 
+type AdditionalInfo {
+  serviceTypeInfo: ServiceTypeInfo!
+  estateTypeInfo: EstateTypeInfo!
+}
+
+union EstateTypeInfo = ApartmentInfo | HouseInfo | LandInfo | CommercialInfo
+
+```
+Typ nemovitosti
+```
 enum EstateType {
   APARTMENT
   HOUSE
@@ -25,6 +35,9 @@ enum EstateType {
   GARAGE
 }
 
+```
+Podtyp nemovitosti
+```
 enum EstateSubType {
   OTHER
   APAR_1KK
@@ -69,6 +82,9 @@ enum EstateSubType {
   LAND_GARDEN
 }
 
+```
+Jazyk
+```
 enum Language {
   CS
   EN
@@ -76,11 +92,17 @@ enum Language {
   DE
 }
 
+```
+Typ služby
+```
 enum ServiceType {
   RENT
   SALE
 }
 
+```
+Jednotka ceny
+```
 enum PriceUnit {
   CZK
   EUR
