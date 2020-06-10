@@ -45,37 +45,37 @@ interface Seller {
 ```
 Nabídka
 ```
-type Offer implements Listing & SearchResult {
+type Offer implements Listing {
 }
 
 ```
 Aukce
 ```
-type Auction implements Listing & SearchResult {
+type Auction implements Listing {
 }
 
 ```
 Projekt
 ```
-type Project implements Listing & SearchResult {
+type Project implements Listing {
 }
 
 ```
 Makléř
 ```
-type Broker implements Seller & SearchResult {
+type Broker implements Seller {
 }
 
 ```
 Soukromá osoba
 ```
-type Person implements Seller & SearchResult {
+type Person implements Seller {
 }
 
 ```
 Lokalita
 ```
-type Locality implements SearchResult{
+type Locality {
 }
 
 
