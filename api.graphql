@@ -5,7 +5,7 @@ schema {
 }
 
 type Query {
-  search(query: String!): SearchResult
+  search(query: String!): [SearchResult!]!
   offer(id: ID!): Listing
   offers(filter: OfferFilter! = {"serviceType":["RENT","SALE"],"estateType":{"main":["APARTMENT","HOUSE","COMMERCIAL","LAND","GARAGE"],"sub":null},"price":{"greaterThan":null,"lessThan":null}}): [Listing!]!
 }
