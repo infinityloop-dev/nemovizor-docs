@@ -18,34 +18,58 @@ type Mutation {
 ```
 Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
 ```
-union Listing = Offer | Auction | Project
+interface Listing {
+    listingId: ID!
+}
 
 ```
 Abstraktní prodejce - makléř nebo soukromá osoba
 ```
-union Seller = Broker | Person
+interface Seller {
+    sellerId: ID!
+}
 
 ```
 Výsledek vyhledávání - nabídka, prodejce nebo lokalita
 ```
-union SearchResult = Offer | Auction | Project | Broker | Person | Locality
-
-type Offer {
+interface SearchResult {
+    searchResultId: ID!
 }
 
-type Auction {
+```
+Nabídka
+```
+type Offer implements Listing & SearchResult {
 }
 
-type Project {
+```
+Aukce
+```
+type Auction implements Listing & SearchResult {
 }
 
-type Broker {
+```
+Projekt
+```
+type Project implements Listing & SearchResult {
 }
 
-type Person {
+```
+Makléř
+```
+type Broker implements Seller & SearchResult {
 }
 
-type Locality {
+```
+Soukromá osoba
+```
+type Person implements Seller & SearchResult {
+}
+
+```
+Lokalita
+```
+type Locality implements SearchResult{
 }
 
 
