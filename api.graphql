@@ -16,3 +16,74 @@ type Mutation {
 union SearchResult = Offer | Auction | Project | Broker | Locality
 
 union Listing = Offer | Auction | Project
+
+enum EstateType {
+  APARTMENT
+  HOUSE
+  COMMERCIAL
+  LAND
+  GARAGE
+}
+
+enum EstateSubType {
+  OTHER
+  APAR_1KK
+  APAR_1+1
+  APAR_2KK
+  APAR_2+1
+  APAR_3KK
+  APAR_3+1
+  APAR_4KK
+  APAR_4+1
+  APAR_5KK
+  APAR_5+1
+  APAR_6+
+  APAR_ROOM
+  HOUSE_FAMILY
+  HOUSE_FAIRY
+  HOUSE_HUT
+  HOUSE_COTTAGE
+  HOUSE_FARMLAND
+  HOUSE_TURNKEY
+  GARAGE_GARAGE
+  GARAGE_PARKING
+  GARAGE_MOBILHEIM
+  GARAGE_ATTIC
+  GARAGE_WINE
+  COMM_OFFICE
+  COMM_VIRTUAL_OFFICE
+  COMM_WAREHOUSE
+  COMM_PRODUCTION
+  COMM_STORE
+  COMM_ACCOMMODATION
+  COMM_CATERING
+  COMM_AGRICULTURAL
+  COMM_APARTMENTS
+  LAND_HOUSING
+  LAND_COMMERCIAL
+  LAND_FIELD
+  LAND_MEADOW
+  LAND_FOREST
+  LAND_POND
+  LAND_ORCHARD
+  LAND_GARDEN
+}
+
+enum Language {
+  CS
+  EN
+  RU
+  DE
+}
+
+enum ServiceType {
+  RENT
+  SALE
+}
+
+enum PriceUnit {
+  CZK
+  EUR
+  USD
+  RUB
+}
