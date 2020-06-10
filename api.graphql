@@ -35,7 +35,7 @@ interface Listing {
     listingId: ID!
     title(lang: Language! = "CS"): String
     description(lang: Language! = "CS"): String
-    broker: Broker!
+    seller: Seller!
     photos: [Photo!]!
     videos: [Video!]!
     comments: [Comment!]!
