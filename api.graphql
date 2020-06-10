@@ -33,6 +33,12 @@ Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
 ```
 interface Listing {
     listingId: ID!
+    title(lang: Language! = "CS"): String
+    description(lang: Language! = "CS"): String
+    broker: Broker!
+    photos: [Photo!]!
+    videos: [Video!]!
+    comments: [Comment!]!
 }
 
 ```
