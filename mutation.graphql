@@ -1,0 +1,5 @@
+```
+Importní rozhraní
+```
+type Mutation {
+}
