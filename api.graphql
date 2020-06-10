@@ -32,13 +32,13 @@ type Result {
 Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
 ```
 interface Listing {
-    listingId: ID!
-    title(lang: Language! = "CS"): String
-    description(lang: Language! = "CS"): String
-    seller: Seller!
-    photos: [Photo!]!
-    videos: [Video!]!
-    comments: [Comment!]!
+  listingId: ID!
+  title(lang: Language! = "CS"): String
+  description(lang: Language! = "CS"): String
+  seller: Seller!
+  photos: [Photo!]!
+  videos: [Video!]!
+  comments: [Comment!]!
 }
 
 ```
