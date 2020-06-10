@@ -19,9 +19,14 @@ Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
 union Listing = Offer | Auction | Project
 
 ```
-Výsledek vyhledávání - nabídka, makléř nebo lokalita
+Abstraktní prodejce - makléř nebo soukromá osoba
 ```
-union SearchResult = Offer | Auction | Project | Broker | Locality
+union Seller = Broker | Person
+
+```
+Výsledek vyhledávání - nabídka, prodejce nebo lokalita
+```
+union SearchResult = Offer | Auction | Project | Broker | Person | Locality
 
 type Offer {
 }
@@ -33,6 +38,9 @@ type Project {
 }
 
 type Broker {
+}
+
+type Person {
 }
 
 type Locality {
