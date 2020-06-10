@@ -13,16 +13,68 @@ type Query {
 type Mutation {
 }
 
+```
+Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
+```
+union Listing = Offer | Auction | Project
+
+```
+Výsledek vyhledávání - nabídka, makléř nebo lokalita
+```
 union SearchResult = Offer | Auction | Project | Broker | Locality
 
-union Listing = Offer | Auction | Project
+type Offer {
+}
+
+type Auction {
+}
+
+type Project {
+}
+
+type Broker {
+}
+
+type Locality {
+}
+
+
 
 type AdditionalInfo {
   serviceTypeInfo: ServiceTypeInfo!
   estateTypeInfo: EstateTypeInfo!
 }
 
-union EstateTypeInfo = ApartmentInfo | HouseInfo | LandInfo | CommercialInfo
+```
+Bližší popis nabídky podle typu služby
+```
+union ServiceTypeInfo = TransferInfo | RentInfo
+
+type TransferInfo {
+}
+
+type RentInfo {
+}
+
+```
+Bližší popis nabídky podle typu nemovitosti
+```
+union EstateTypeInfo = ApartmentInfo | HouseInfo | LandInfo | CommercialInfo | GarageInfo
+
+type ApartmentInfo {
+}
+
+type HouseInfo {
+}
+
+type LandInfo {
+}
+
+type CommercialInfo {
+}
+
+type GarageInfo {
+}
 
 ```
 Typ nemovitosti
