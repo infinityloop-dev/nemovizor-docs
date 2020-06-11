@@ -52,10 +52,13 @@ type Offer implements Listing {
   photos: [Photo!]!
   videos: [Video!]!
   comments: [Comment!]!
+
   "Předmět nabídky"
   estate: Estate!
+
   "Typ služby - prodej nebo pronájem"
   serviceType: ServiceType!
+
   "Cena"
   price(unit: PriceUnit! = "CZK"): Int!
 }
@@ -71,10 +74,13 @@ type Auction implements Listing {
   photos: [Photo!]!
   videos: [Video!]!
   comments: [Comment!]!
+
   "Předmět dražby"
   estate: Estate!
+
   "Typ služby - prodej nebo pronájem"
   serviceType: ServiceType!
+
   "Vyvovávací cena"
   startingPrice(unit: PriceUnit! = "CZK"): Int!
 }
@@ -90,6 +96,7 @@ type Project implements Listing {
   photos: [Photo!]!
   videos: [Video!]!
   comments: [Comment!]!
+
   "Nabídky projektu"
   listings: [Listing!]!
 }
