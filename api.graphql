@@ -7,7 +7,7 @@ schema {
 type Query {
   search(query: String!): [Result!]!
   listing(id: ID!): Listing
-  listings(filter: ListingFilter! = {"serviceType":["RENT","SALE"],"estateType":{"main":["APARTMENT","HOUSE","COMMERCIAL","LAND","GARAGE"],"sub":null},"price":{"greaterThan":null,"lessThan":null}}): [Listing!]!
+  listings(filter: ListingFilter! = {"listingType":["OFFER","AUCTION","PROJECT"],"serviceType":["RENT","SALE"],"estateType":{"main":["APARTMENT","HOUSE","COMMERCIAL","LAND","GARAGE"],"sub":null},"price":{"greaterThan":null,"lessThan":null}}): [Listing!]!
   seller(id: ID!): Seller
   brokers(filter: BrokerFilter!): [Broker!]!
 }
@@ -143,6 +143,23 @@ type CommercialInfo {
 Informace o garáži & ostatních nemovitostech
 ```
 type GarageInfo {
+}
+
+```
+Rozsah dvou hodnot
+```
+input IntRange {
+  greaterThan: Int = null
+  lessThan: Int = null
+}
+
+```
+Typ nabídky
+```
+enum ListingType {
+  OFFER
+  AUCTION
+  PROJECT
 }
 
 ```
