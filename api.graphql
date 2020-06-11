@@ -15,22 +15,22 @@ type Query {
 type Mutation {
 }
 
-```
+"""
 Výsledek vyhledávání - nabídka, prodejce nebo lokalita
-```
+"""
 union SearchResult = Offer | Auction | Project | Broker | Person | Location
 
-```
+"""
 Wrapper nad výsledkem vyhledávání
-```
+"""
 type Result {
     resultId: ID!
     object: SearchResult!
 }
 
-```
+"""
 Abstraktní nabídka - obyčejná nabídka, aukce nebo projekt
-```
+"""
 interface Listing {
   listingId: ID!
   title(lang: Language! = "CS"): String
@@ -41,130 +41,129 @@ interface Listing {
   comments: [Comment!]!
 }
 
-```
+"""
 Nabídka
-```
+"""
 type Offer implements Listing {
 }
 
-```
+"""
 Aukce
-```
+"""
 type Auction implements Listing {
 }
 
-```
+"""
 Projekt
-```
+"""
 type Project implements Listing {
 }
 
-```
+"""
 Abstraktní prodejce - makléř nebo soukromá osoba
-```
+"""
 interface Seller {
     sellerId: ID!
 }
 
-```
+"""
 Makléř
-```
+"""
 type Broker implements Seller {
 }
 
-```
+"""
 Soukromá osoba
-```
+"""
 type Person implements Seller {
 }
 
-```
+"""
 Lokalita
-```
+"""
 type Locality {
 }
 
-
-```
+"""
 Bližší informace o nabídce v závislosti na klíčových atributech nabídky
-```
+"""
 type AdditionalInfo {
   serviceTypeInfo: ServiceTypeInfo!
   estateTypeInfo: EstateTypeInfo!
 }
 
-```
+"""
 Bližší informace o nabídce podle typu služby
-```
+"""
 union ServiceTypeInfo = TransferInfo | RentInfo
 
-```
+"""
 Informace o prodeji
-```
+"""
 type TransferInfo {
 }
 
-```
+"""
 Informace o pronájmu
-```
+"""
 type RentInfo {
 }
 
-```
+"""
 Bližší informace o nabídce podle typu nemovitosti
-```
+"""
 union EstateTypeInfo = ApartmentInfo | HouseInfo | LandInfo | CommercialInfo | GarageInfo
 
-```
+"""
 Informace o bytu
-```
+"""
 type ApartmentInfo {
 }
 
-```
+"""
 Informace o domě
-```
+"""
 type HouseInfo {
 }
 
-```
+"""
 Informace o pozemku
-```
+"""
 type LandInfo {
 }
 
-```
+"""
 Informace o komerčním prostoru
-```
+"""
 type CommercialInfo {
 }
 
-```
+"""
 Informace o garáži & ostatních nemovitostech
-```
+"""
 type GarageInfo {
 }
 
-```
+"""
 Rozsah dvou hodnot
-```
+"""
 input IntRange {
   greaterThan: Int = null
   lessThan: Int = null
 }
 
-```
+"""
 Typ nabídky
-```
+"""
 enum ListingType {
   OFFER
   AUCTION
   PROJECT
 }
 
-```
+"""
 Typ nemovitosti
-```
+"""
 enum EstateType {
   APARTMENT
   HOUSE
@@ -173,9 +172,9 @@ enum EstateType {
   GARAGE
 }
 
-```
+"""
 Podtyp nemovitosti
-```
+"""
 enum EstateSubType {
   OTHER
   APAR_1KK
@@ -220,9 +219,9 @@ enum EstateSubType {
   LAND_GARDEN
 }
 
-```
+"""
 Jazyk
-```
+"""
 enum Language {
   CS
   EN
@@ -230,17 +229,17 @@ enum Language {
   DE
 }
 
-```
+"""
 Typ služby
-```
+"""
 enum ServiceType {
   RENT
   SALE
 }
 
-```
+"""
 Jednotka ceny
-```
+"""
 enum PriceUnit {
   CZK
   EUR
