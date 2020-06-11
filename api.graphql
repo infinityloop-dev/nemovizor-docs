@@ -7,7 +7,7 @@ schema {
 type Query {
   search(query: String!): [Result!]!
   listing(id: ID!): Listing
-  listings(filter: OfferFilter! = {"serviceType":["RENT","SALE"],"estateType":{"main":["APARTMENT","HOUSE","COMMERCIAL","LAND","GARAGE"],"sub":null},"price":{"greaterThan":null,"lessThan":null}}): [Listing!]!
+  listings(filter: ListingFilter! = {"serviceType":["RENT","SALE"],"estateType":{"main":["APARTMENT","HOUSE","COMMERCIAL","LAND","GARAGE"],"sub":null},"price":{"greaterThan":null,"lessThan":null}}): [Listing!]!
   seller(id: ID!): Seller
   brokers(filter: BrokerFilter!): [Broker!]!
 }
