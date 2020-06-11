@@ -45,18 +45,34 @@ interface Listing {
 Nabídka
 """
 type Offer implements Listing {
+  estate: Estate!
+  serviceType: ServiceType!
+  price(unit: PriceUnit! = "CZK"): Int!
 }
 
 """
 Aukce
 """
 type Auction implements Listing {
+  estate: Estate!
+  serviceType: ServiceType!
+  startingPrice(unit: PriceUnit! = "CZK"): Int!
 }
 
 """
 Projekt
 """
 type Project implements Listing {
+  listings: [Listing!]!
+}
+
+"""
+Nemovitost
+"""
+type Estate {
+  type: EstateType!
+  subType: EstateSubType!
+  additionalInfo: AdditionalInfo!
 }
 
 """
