@@ -114,6 +114,7 @@ type Estate {
   waste: [WasteType!]!
   heating: [HeatingType!]!
   telecommunication: [TelecommunicationType!]!
+  road: [RoadType!]!
 }
 
 """
