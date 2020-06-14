@@ -108,6 +108,12 @@ type Estate {
   type: EstateType!
   subType: EstateSubType!
   additionalInfo: AdditionalInfo!
+  electricity: [ElectricityType!]!
+  gas: [GasType!]!
+  water: [WaterType!]!
+  waste: [WasteType!]!
+  heating: [HeatingType!]!
+  telecommunication: [TelecommunicationType!]!
 }
 
 """
@@ -296,4 +302,38 @@ enum PriceUnit {
   EUR
   USD
   RUB
+}
+
+enum ElectricityType {
+  V120
+  V230
+  V400
+}
+
+enum GasType {
+  PIPELINE
+  INDIVIDUAL
+}
+
+enum WaterType {
+  PIPELINE
+  INDIVIDUAL
+}
+
+enum WasteType {
+  SEWERAGE
+  PLANT
+  SEPTIC
+  SUMP
+}
+
+enum HeatingType {
+  INDIVIDUAL_GAS
+  INDIVIDUAL_SOLID
+  INDIVIDUAL_ELECTRIC
+  CENTRAL_GAS
+  CENTRAL_SOLID
+  CENTRAL_ELECTRIC
+  CENTRAL_REMOTE
+  OTHER
 }
